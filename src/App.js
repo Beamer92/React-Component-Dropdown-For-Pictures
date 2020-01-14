@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import DropdownMultiple from './components/DropdownMultiple';
-import Dropdown from './components/Dropdown';
+import ImageDropDown from './components/ImageDropDown';
 
 class App extends Component {
     constructor(){
@@ -108,14 +107,7 @@ class App extends Component {
         <p>Dropdown menu examples</p>
 
         <div className="wrapper">
-          <DropdownMultiple
-            titleHelper="Location"
-            title="Select location"
-            list={this.state.location}
-            toggleItem={this.toggleSelected}
-          />
-
-          <Dropdown
+          <ImageDropDown
             title="Select fruit"
             list={this.state.fruit}
             resetThenSet={this.resetThenSet}
