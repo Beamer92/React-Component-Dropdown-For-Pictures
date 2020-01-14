@@ -5,7 +5,7 @@ __Image-Based-Selection__       |
 
 # Installation
 
-    Just grab the component JS and CSS files and drop them in your project wherever you want
+To use, just copy the component JS and CSS files and drop them in your project wherever you want
 
 Make sure that you inserted the following `link` tag between the `<head></head>` tags inside `/public/index.html` of your react project. This is required for the `FontAwesome` component that the package depends on.
 
