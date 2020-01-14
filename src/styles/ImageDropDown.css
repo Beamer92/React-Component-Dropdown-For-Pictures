@@ -71,7 +71,6 @@ p {
   user-select: none;
   position: relative;
   width: 100%;
-  padding-left: 5%;
 }
 
 .dd-header {
@@ -81,8 +80,7 @@ p {
   cursor: default;
   position: relative;
   background-color: #fff;
-  width: 205px;
-  height: 55px;
+  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -90,6 +88,11 @@ p {
 
 .dd-header span {
   margin-right: 20px;
+}
+
+.dd-header label {
+  font-weight: 600;
+  font-size: large;
 }
 
 .angle-down {
@@ -102,8 +105,7 @@ p {
   border: 1px solid #dfdfdf;
   border-top: none;
   background-color: #fff;
-  padding: 5px 0;
-  max-height: 215px;
+  padding: 1vh;
   overflow-y: scroll;
   overflow-x: hidden;
   display: inline-flex;
@@ -113,8 +115,7 @@ p {
 .dd-list-item {
   display: flex;
   justify-content: center;
-  width: 35px;
-  max-height: 60px;
+  width: 6vw;
   padding-top: 0.5em;
 }
 
@@ -128,36 +129,18 @@ p {
   background-color: #ffcc01;
 }
 
-.dd-wrapper-single {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  position: relative;
-  width: auto;
-}
-
-.dd-wrapper-single .dd-list {
-  border: 1px solid #ccc;
-  border-top: none;
-}
-
-.dd-wrapper-single .dd-header .dd-header-name {
-  font-weight: 400;
-}
-
-.dd-wrapper-single .dd-list {
+.dd-list {
   border: 1px solid #ccc;
   border-top: none;
 }
 
 .dd-img {
-  width: 9%;
-  height: 53%;
-  margin-left: 10px;
+  width: 3vw;
+  height: 5vh;
+  margin-left: 2vw;
 }
 
 .dd-listImg {
-  width: 52.5%;
-  height: 90%;
+  width: 3vw;
+  height: 5vh;
 }

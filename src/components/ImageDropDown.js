@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
-import '../styles/dropdown.css'
+import '../styles/ImageDropDown.css'
 
 class ImageDropDown extends Component{
   constructor(props){
@@ -46,20 +46,20 @@ class ImageDropDown extends Component{
   }
 
   render() {
-    const { list } = this.props
-    const { listOpen } = this.state
+    console.log(this.props)
     return (
       <div className="dd-wrapper">
         <div className="dd-header" onClick={() => this.toggleList()}>
-          <img className="dd-img" src={this.props.currentUrl.value}/>
+          <img className="dd-img" src={this.props.selected.value} alt=""/>
+          <label>{this.props.selected.label}</label>
           {
-            listOpen ? <FontAwesome name="angle-up" /> : <FontAwesome name="angle-down" />
+            this.state.listOpen ? <FontAwesome name="angle-up" /> : <FontAwesome name="angle-down" />
           }
         </div>
-        {listOpen && <ul className="dd-list" onClick={e => e.stopPropagation()}>
-          {list.map((item, idx) => (
+        {this.state.listOpen && <ul className="dd-list" onClick={e => e.stopPropagation()}>
+          {this.props.list.map((item, idx) => (
             <li className="dd-list-item" key={idx} onClick={() => this.selectItem(item)}>
-              <img className="dd-listImg" src={item.value}/>
+              <img className="dd-listImg" src={item.value} alt=""/>
             </li>
           ))}
         </ul>}
@@ -68,4 +68,4 @@ class ImageDropDown extends Component{
   }
 }
 
-export default DropdownMultiple
+export default ImageDropDown
