@@ -1,0 +1,146 @@
+* {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+  .App p {
+    margin-bottom: 50px;
+    font-size: 2.4rem;
+  }
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 460px;
+}
+
+.dd-wrapper {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  width: 100%;
+}
+
+.dd-header {
+  line-height: 23px;
+  border: 1px solid #dfdfdf;
+  border-radius: 3px;
+  cursor: default;
+  position: relative;
+  background-color: #fff;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dd-header span {
+  margin-right: 20px;
+}
+
+.dd-header label {
+  font-weight: 600;
+  font-size: large;
+}
+
+.angle-down {
+  color: #000;
+}
+
+.dd-list {
+  position: absolute;
+  width: 100%;
+  border: 1px solid #dfdfdf;
+  border-top: none;
+  background-color: #fff;
+  padding: 1vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.dd-list-item {
+  display: flex;
+  justify-content: center;
+  width: 6vw;
+  padding-top: 0.5em;
+}
+
+.dd-list-item.selected {
+  color: #fff;
+  background-color: #ffcc01;
+}
+
+.dd-list-item:hover {
+  color: #fff;
+  background-color: #ffcc01;
+}
+
+.dd-list {
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.dd-img {
+  width: 3vw;
+  height: 5vh;
+  margin-left: 2vw;
+}
+
+.dd-listImg {
+  width: 3vw;
+  height: 5vh;
+}

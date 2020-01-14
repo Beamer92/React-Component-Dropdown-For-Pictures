@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import FontAwesome from 'react-fontawesome'
-import '../styles/global.css'
+import '../styles/ImageDropDown.css'
 
-class Dropdown extends Component{
+class ImageDropDown extends Component{
   constructor(props){
     super(props)
     this.state = {
       listOpen: false,
-      headerTitle: this.props.title
     }
     this.close = this.close.bind(this)
   }
@@ -28,17 +27,16 @@ class Dropdown extends Component{
     window.removeEventListener('click', this.close)
   }
 
-  close(timeOut){
+  close(){
     this.setState({
       listOpen: false
     })
   }
 
-  selectItem(title, id, stateKey){
+  selectItem(item) {
     this.setState({
-      headerTitle: title,
       listOpen: false
-    }, this.props.resetThenSet(id, stateKey))
+    }, this.props.onChange(item))
   }
 
   toggleList(){
@@ -47,21 +45,22 @@ class Dropdown extends Component{
     }))
   }
 
-  render(){
-    const{list} = this.props
-    const{listOpen, headerTitle} = this.state
-    return(
+  render() {
+    console.log(this.props)
+    return (
       <div className="dd-wrapper">
         <div className="dd-header" onClick={() => this.toggleList()}>
-          <div className="dd-header-title">{headerTitle}</div>
-          {listOpen
-            ? <FontAwesome name="angle-up" size="2x"/>
-            : <FontAwesome name="angle-down" size="2x"/>
+          <img className="dd-img" src={this.props.selected.value} alt=""/>
+          <label>{this.props.selected.label}</label>
+          {
+            this.state.listOpen ? <FontAwesome name="angle-up" /> : <FontAwesome name="angle-down" />
           }
         </div>
-        {listOpen && <ul className="dd-list" onClick={e => e.stopPropagation()}>
-          {list.map((item)=> (
-            <li className="dd-list-item" key={item.id} onClick={() => this.selectItem(item.title, item.id, item.key)}>{item.title} {item.selected && <FontAwesome name="check"/>}</li>
+        {this.state.listOpen && <ul className="dd-list" onClick={e => e.stopPropagation()}>
+          {this.props.list.map((item, idx) => (
+            <li className="dd-list-item" key={idx} onClick={() => this.selectItem(item)}>
+              <img className="dd-listImg" src={item.value} alt=""/>
+            </li>
           ))}
         </ul>}
       </div>
@@ -69,4 +68,4 @@ class Dropdown extends Component{
   }
 }
 
-export default Dropdown
+export default ImageDropDown
